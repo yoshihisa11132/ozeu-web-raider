@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>OZEU DMグループスパム</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OZEU Web Spammer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     /* スクロールバーのスタイル */
@@ -10,6 +11,7 @@
     ::-webkit-scrollbar-track { background: #202225; border-radius: 3px; }
     ::-webkit-scrollbar-thumb { background: #5865f2; border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: #7289da; }
+
 
     *, *::before, *::after { box-sizing: border-box; }
     body {
@@ -96,7 +98,7 @@
 
     /* ボタン */
     button.primary {
-      margin-top:24px; width:50%; padding:14px;
+      margin-top:24px; width:100%; padding:14px;
       border:none; border-radius:14px;
       background:linear-gradient(135deg,#6d75ff,#5865f2);
       color:#fff; font-weight:700; font-size:18px;
@@ -120,29 +122,39 @@
       box-shadow:inset 0 4px 6px rgba(0,0,0,.3);
     }
     button.primary.loading {
-      color:#fff; pointer-events:none;
+      color:transparent; pointer-events:none;
     }
+
     button.secondary {
-      margin-top:24px; width:50%; padding:14px;
-      border:none; border-radius:14px;
-      background:linear-gradient(135deg,#e74c3c,#c0392b);
-      color:#fff; font-weight:700; font-size:18px;
-      letter-spacing:.5px; cursor:pointer; position:relative;
-      box-shadow:
-        0 4px 15px rgba(236,81,81,.4),
-        0 0 10px rgba(255,255,255,.1),
-        inset 0 0 5px rgba(255,255,255,.2);
-      overflow:hidden; transition:all .3s;
+      margin-top:8px; padding:6px 12px;
+      background:#5865f2; color:#fff;
+      font-size:14px; border:none; border-radius:6px;
+      position:relative; overflow:hidden;
     }
-    button.secondary:hover {
+    button.secondary::after {
+      content:''; position:absolute;
+      top:0; left:0; width:100%; height:100%;
+      background:rgba(255,255,255,0.1);
+      opacity:0; transition:opacity .3s;
+    }
+    button.secondary:hover::after { opacity:1; }
+    button.secondary:active::after { background:rgba(255,255,255,0.2); }
+
+    /* 停止・退出ボタン強調 */
+    #stopSpam, #leaveBtn {
+      width:48%; padding:10px;
+      border:none; border-radius:10px;
+      background:linear-gradient(135deg,#e74c3c,#c0392b);
+      color:#fff; font-weight:700; font-size:14px;
+      letter-spacing:.5px; cursor:pointer; transition:all .3s;
+      margin-top:12px;
+      box-shadow: 0 4px 10px rgba(255,0,0,0.3);
+    }
+    #stopSpam:hover, #leaveBtn:hover {
       background:linear-gradient(135deg,#c0392b,#e74c3c);
-      box-shadow:
-        0 6px 22px rgba(236,81,81,.6),
-        0 0 24px rgba(255,255,255,.2),
-        inset 0 0 10px rgba(255,255,255,.3);
       transform:scale(1.03);
     }
-    button.secondary:active {
+    #stopSpam:active, #leaveBtn:active {
       transform:scale(0.96);
       box-shadow:inset 0 4px 6px rgba(0,0,0,.3);
     }
@@ -152,71 +164,156 @@
       gap: 10px;
       justify-content: center;
     }
-	.file-input-wrapper {
-		position: relative;
-		margin-top: 6px;
-	}
-	.file-label {
-		display: inline-block;
-		padding: 10px 16px;
-		background-color: #6d75ff;
-		color: #fff;
-		border-radius: 8px;
-		cursor: pointer;
-		font-size: 14px;
-		font-weight: 500;
-		transition: background 0.2s ease;
-	}
-	.file-label:hover {
-		background-color: #5865f2;
-	}
-	.file-name {
-		display: inline-block;
-		margin-left: 12px;
-		font-size: 13px;
-		color: #aaa;
-	}
-	input[type="file"] {
-		display: none;
-	}
+
+    /* Advanced options (details) */
+    details { margin-top:18px; }
+    summary { list-style:none; padding-left:20px; cursor:pointer; font-weight:600; position:relative; margin-top:0; }
+    summary::-webkit-details-marker { display:none; }
+    summary::marker { content:none; }
+    summary::before { content:'▶'; position:absolute; left:0; top:50%; transform:translateY(-50%); transition:transform .3s ease; }
+    details[open] > summary::before { transform:translateY(-50%) rotate(90deg); }
+    .detail-content { transform-origin:top center; transform:scaleY(0); opacity:0; transition:transform .3s ease, opacity .3s ease; }
+    details[open] .detail-content { transform:scaleY(1); opacity:1; }
 
     #log { margin-top:20px; padding:10px; height:120px; overflow-y:auto; background:#202225; border-radius:10px; font-family:monospace; font-size:12px; white-space:pre-wrap; resize: vertical;}
+    @media (max-width: 600px) {
+      .card {
+        padding: 16px;
+        max-width: 100%;
+        max-height: 100vh;
+        border-radius: 10px;
+      }
+
+      h2 {
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+
+      label {
+        font-size: 13px;
+        margin-top: 12px;
+      }
+
+      input[type="text"],
+      textarea,
+      input[type="number"] {
+        padding: 8px;
+        font-size: 12px;
+      }
+
+      button.primary {
+        padding: 12px;
+        font-size: 16px;
+      }
+
+      button.secondary {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      .row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .row label {
+        width: 100%;
+      }
+
+      .button-container {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      #stopSpam,
+      #leaveBtn {
+        width: 100%;
+      }
+
+      details summary {
+        font-size: 13px;
+        padding-left: 18px;
+      }
+
+      .checkbox-container {
+        font-size: 13px;
+      }
+
+      #log {
+        height: 80px;
+        font-size: 11px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h2>OZEU DMグループスパム</h2>
+    <h2>OZEU Web Spammer</h2>
     <form id="form">
-      <label>トークン
-        <input type="text" id="token" required placeholder="MTM2MjEwNjU4NDA5NjA0N******************************">
+      <label>トークン（カンマ or 改行 区切り）
+        <textarea id="tokens" rows="4" placeholder="MTM1ODc4MTE3NTIzMzI1MzU*****,MTEwMDU5Njc1NjQ1NjE2MTMwM*****,..."></textarea>
       </label>
-      <div class="file-input-wrapper" bis_skin_checked="1">
-		<label class="file-label" for="image">アイコン画像を選択</label>
-		<input type="file" id="image" accept="image/*">
-		<span class="file-name" id="fileName">未選択</span>
-	</div>
-      <label>スパム対象ユーザーID（カンマ区切り・入力なしでフレンド全員を選択）
-        <textarea id="userIds" placeholder="1234567890123456,2345678901234567,260349358443069440...IDは2つ以上入力しないと機能しない" rows="3"></textarea>
+
+      <label>サーバーID
+        <input type="text" id="guildId" required placeholder="123456789012345678">
       </label>
-      <div class="checkbox-container">
-        <input type="checkbox" id="showLogsCheckbox">
-        <span>レスポンスJSONを表示</span>
+
+      <label>チャンネルID（カンマ or 改行 区切り）
+        <textarea id="channelIds" rows="2" placeholder="123456789012345678,123456789012345678,..."></textarea>
+      </label>
+      <button type="button" id="autoFillChannels" class="secondary">チャンネル自動取得</button>
+
+      <label>メッセージ内容
+        <textarea id="message" rows="4" placeholder="送信するメッセージを入力"></textarea>
+      </label>
+
+      <label class="checkbox-container">
+        <input type="checkbox" id="randomize">
+        <span>メッセージのランダマイズ</span>
+      </label>
+
+      <div class="row">
+        <label>メッセージ送信間隔 (秒)
+          <input type="number" id="delay" min="0" step="0.1" placeholder="0">
+        </label>
+        <label>メッセージ送信数
+          <input type="number" id="limit" min="1" step="1" placeholder="例:100">
+        </label>
       </div>
-      <div class="checkbox-container">
-        <input type="checkbox" id="spamDmCheckbox">
-        <span>DMスパムを実行</span>
-      </div>
-      <div class="checkbox-container">
-        <input type="checkbox" id="leaveDMCheckbox">
-        <span>作成したDMグループから退出</span>
-      </div>
-      <div class="button-container">
-		<button id="submitBtn" type="submit" class="primary">実行</button>
-		<button type="button" id="stopBtn" class="secondary">停止</button>
-	  </div>
+
+      <details>
+        <summary>メンション設定</summary>
+        <div class="detail-content">
+          <label>メンションするユーザーID一覧（カンマ or 改行 区切り）
+            <textarea id="mentionIds" rows="2" placeholder="123456789012345678,123456789012345678"></textarea>
+          </label>
+          <button type="button" id="fetchMentions" class="secondary">メンション自動取得</button>
+        </div>
+      </details>
+
+      <details>
+        <summary>投票設定</summary>
+        <div class="detail-content">
+          <label>投票 タイトル
+            <input type="text" id="pollTitle" placeholder="投票タイトル">
+          </label>
+          <label>投票 選択肢（カンマ or 改行 区切り）
+            <textarea id="pollAnswers" rows="2" placeholder="選択肢1,選択肢2,..."></textarea>
+          </label>
+        </div>
+      </details>
+
+      <button id="submitBtn" type="submit" class="primary" disabled>実行</button>
     </form>
+    
+    <div class="button-container">
+      <button id="stopSpam" class="secondary">スパム停止</button>
+      <button id="leaveBtn" class="secondary">サーバー退出</button>
+    </div>
+
     <div id="log"></div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
