@@ -250,16 +250,16 @@
   <div class="card">
     <h2>OZEU Web Spammer</h2>
     <form id="form">
-      <label>トークン（カンマ or 改行 区切り）
-        <textarea id="tokens" rows="4" placeholder="MTM1ODc4MTE3NTIzMzI1MzU*****,MTEwMDU5Njc1NjQ1NjE2MTMwM*****,..."></textarea>
+      <label>トークン
+        <textarea id="tokens" rows="4" placeholder="カンマ / 改行 / スペースで区切る MTM1ODc4MTE3NTIzMzI1MzU*****,MTEwMDU5Njc1NjQ1NjE2MTMwM*****,..."></textarea>
       </label>
 
       <label>サーバーID
         <input type="text" id="guildId" required placeholder="123456789012345678">
       </label>
 
-      <label>チャンネルID（カンマ or 改行 区切り）
-        <textarea id="channelIds" rows="2" placeholder="123456789012345678,123456789012345678,..."></textarea>
+      <label>チャンネルID
+        <textarea id="channelIds" rows="2" placeholder="カンマ / 改行 / スペースで区切る 123456789012345678,123456789012345678,..."></textarea>
       </label>
       <button type="button" id="autoFillChannels" class="secondary">チャンネル自動取得</button>
 
@@ -284,8 +284,8 @@
       <details>
         <summary>メンション設定</summary>
         <div class="detail-content">
-          <label>メンションするユーザーID一覧（カンマ or 改行 区切り）
-            <textarea id="mentionIds" rows="2" placeholder="123456789012345678,123456789012345678"></textarea>
+          <label>メンションするユーザーID一覧
+            <textarea id="mentionIds" rows="2" placeholder="カンマ / 改行 / スペースで区切る 123456789012345678,123456789012345678"></textarea>
           </label>
           <button type="button" id="fetchMentions" class="secondary">メンション自動取得</button>
         </div>
@@ -297,8 +297,8 @@
           <label>投票 タイトル
             <input type="text" id="pollTitle" placeholder="投票タイトル">
           </label>
-          <label>投票 選択肢（カンマ or 改行 区切り）
-            <textarea id="pollAnswers" rows="2" placeholder="選択肢1,選択肢2,..."></textarea>
+          <label>投票 選択肢
+            <textarea id="pollAnswers" rows="2" placeholder="カンマ / 改行 / スペースで区切る 選択肢1,選択肢2,..."></textarea>
           </label>
         </div>
       </details>
