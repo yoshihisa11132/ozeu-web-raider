@@ -244,6 +244,55 @@
         font-size: 11px;
       }
     }
+    .radio-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+    margin-right: 16px;
+  }
+
+  .radio-container input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4f545c;
+    border: 2px solid #5865f2;
+    border-radius: 50%;
+    position: relative;
+    transition: background .3s ease, border-color .3s ease;
+  }
+
+  .radio-container input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 10px; height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform .2s ease-out;
+  }
+
+  .radio-container input[type="radio"]:checked {
+    background: #5865f2;
+    border-color: #7289da;
+  }
+
+  .radio-container input[type="radio"]:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .radio-container span {
+    color: #fff;
+    transition: color .3s;
+  }
+  .radio-container input[type="radio"]:checked + span {
+    color: #adb8ff;
+  }
+
   </style>
 </head>
 <body>
@@ -263,15 +312,31 @@
       </label>
       <button type="button" id="autoFillChannels" class="secondary">チャンネル自動取得</button>
 
-      <label>メッセージ内容
-        <textarea id="message" rows="4" placeholder="送信するメッセージを入力"></textarea>
-      </label>
 
+    <label>メッセージ内容</label>
+    <div class="row">
+      <label class="radio-container">
+        <input type="radio" name="messageOption" value="A" required checked>
+        <span>通常宣伝文</span>
+      </label>
+      <label class="radio-container">
+        <input type="radio" name="messageOption" value="B">
+        <span>クラッシュGIF宣伝文</span>
+      </label>
+      <label class="radio-container">
+        <input type="radio" name="messageOption" value="C">
+        <span>ブロック回避宣伝文
+        </span>
+      </label>
+    </div>
+      <label class="checkbox-container">
+        <input type="checkbox" id="allmention" checked>
+        <span>全体メンション</span>
+      </label>
       <label class="checkbox-container">
         <input type="checkbox" id="randomize">
         <span>メッセージのランダマイズ</span>
       </label>
-
       <div class="row">
         <label>メッセージ送信間隔
           <input type="number" id="delay" min="0" step="0.1" placeholder="0"> 秒
