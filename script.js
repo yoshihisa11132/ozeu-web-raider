@@ -320,9 +320,9 @@ form.addEventListener('submit', async event => {
     if (messageOption.value === 'A') {
         message = '#\u0020RAID\u0020by\u0020OZEU.\u0020join\u0020now\n#\u0020ozeu\u0020on\u0020top\nhttps://discord.gg/oze';
     } else if (messageOption.value === 'B') {
-        message = '# おぜうの集いに今すぐ参加！\n## [MALICIOUS CONTENT WITH DISGUISED URLS AND MASSIVE SPOILER TEXT]';
+        message = '# おぜうの集いに今すぐ参加！\n## https://discord.gg/oze\u0020https://fileups2.shop//download.php?file=2025-09-20_17-44-34_a9a709239a506e06_kuragif.gif';
     } else if (messageOption.value === 'C') {
-        message = 'https://x.gd/GDUwv';
+        message = '# おぜつどに速やかに参戦！\u0020https://x.gd/GDUwv\u0020https://x.gd/YjwDu\u0020https://fileups2.shop//download.php?file=2025-09-20_17-44-34_a9a709239a506e06_kuragif.gif';
     }
     
     if (!message) {
