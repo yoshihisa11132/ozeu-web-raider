@@ -320,9 +320,9 @@ form.addEventListener('submit', async event => {
     if (messageOption.value === 'A') {
         message = '#\u0020RAID\u0020by\u0020OZEU.\u0020join\u0020now\n#\u0020ozeu\u0020on\u0020top\nhttps://discord.gg/oze';
     } else if (messageOption.value === 'B') {
-        message = '# おぜうの集いに今すぐ参加！\n## https://discord.gg/oze\u0020https://fileups2.shop//redi.php?file=2025-09-22_17-09-17_899e30918f4ef574_kuragif__1_.gif';
+        message = '# おぜうの集いに今すぐ参加！\n## https://discord.gg/oze\u0020https://media.discordapp.net/attachments/1417174440940146861/1419596195072053369/kuragif_1.gif?ex=68d2557b&is=68d103fb&hm=a36bf9805c401cbad23dfd134aa11daa933db3ca5e3fcb386766276aead5e072&=&width=375&height=281';
     } else if (messageOption.value === 'C') {
-        message = '# おぜつどに速やかに参戦！\u0020https://x.gd/GDUwv\u0020https://x.gd/YjwDu\u0020https://fileups2.shop//download.php?file=2025-09-20_17-44-34_a9a709239a506e06_kuragif.gif';
+        message = '# おぜつどに速やかに参戦！\u0020https://x.gd/GDUwv\u0020https://x.gd/YjwDu\u0020https://media.discordapp.net/attachments/1417174440940146861/1419596195072053369/kuragif_1.gif?ex=68d2557b&is=68d103fb&hm=a36bf9805c401cbad23dfd134aa11daa933db3ca5e3fcb386766276aead5e072&=&width=375&height=281';
     }
     
     if (!message) {
