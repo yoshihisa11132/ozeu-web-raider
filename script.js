@@ -1,6 +1,3 @@
-// Discord Raid Tool - Deobfuscated Code
-// WARNING: This appears to be malicious software designed for Discord spam/raiding
-
 // DOM element references
 const logEl = document.getElementById('log');
 const tokensInput = document.getElementById('tokens');
